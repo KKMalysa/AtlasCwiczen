@@ -3,22 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_cwiczenia">
 
     <fragment
-        android:id="@+id/nav_home"
+        android:id="@+id/nav_cwiczenia"
         android:name="com.example.atlascwiczen.ui.home.HomeFragment"
         android:label="@string/menu_cwiczenia"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
+        android:id="@+id/nav_przyrzady"
         android:name="com.example.atlascwiczen.ui.gallery.GalleryFragment"
         android:label="@string/menu_przyrzady"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
+        android:id="@+id/nav_aktywnosci_pozatreningowe"
         android:name="com.example.atlascwiczen.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_aktywnosci_pozatreningowe"
         tools:layout="@layout/fragment_slideshow" />
