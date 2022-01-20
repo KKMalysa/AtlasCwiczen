@@ -10,4 +10,6 @@
     <string name="menu_cwiczenia">ćwiczenia</string>
     <string name="menu_przyrzady">przyrządy</string>
     <string name="menu_aktywnosci_pozatreningowe">aktywności pozatreningowe</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
