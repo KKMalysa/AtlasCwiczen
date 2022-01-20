@@ -68,15 +68,22 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
+    @SuppressWarnings("StatementWithEmptyBody")
+//    @Override  // <- coś tu sie wykrzaczyło
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
 
         if (id == R.id.nav_cwiczenia) {
 
-            AtlasCwiczenFragment fragment = new AtlasCwiczenFragment();
+            AtlasCwiczenFragment fragment = AtlasCwiczenFragment.newInstance(new AtlasCwiczenObject[]{
+                    new AtlasCwiczenObject("pompki"),
+                    new AtlasCwiczenObject("brzuszki")
+            });
+
+
             //wszelkie operacje na fragmentach wyknuje się przy użyciu transakcji
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.containerLayout, fragment);
+            fragmentTransaction.replace(R.id.containerLayout, fragment); //<- add by nakladal jedne na drugi, a tego nie chce
             fragmentTransaction.commit(); // <- zatwierdza transakcje. tak trzeba i już
 
         } else if (id == R.id.nav_przyrzady) {
