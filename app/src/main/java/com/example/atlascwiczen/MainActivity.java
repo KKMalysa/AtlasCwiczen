@@ -10,6 +10,7 @@ import com.google.android.material.navigation.NavigationView;
 
 import androidx.core.view.GravityCompat;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.legacy.app.ActionBarDrawerToggle;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -47,11 +48,17 @@ public class MainActivity extends AppCompatActivity {
                 R.id.nav_cwiczenia, R.id.nav_przyrzady, R.id.nav_aktywnosci_pozatreningowe)
                 .setOpenableLayout(drawer)
                 .build();
+
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
         navigationView.setCheckedItem(R.id.nav_cwiczenia);
+        /**
+         * odkomentowanie poniższej lini wykrzacza navigation drawer. czemu? - nie wiem TODO
+         * update: ok, wiem linia 43. koliduje. nie mogę po ID, bo to jest inaczej
+         */
+        onNavigationItemSelected(navigationView.getMenu().findItem(R.id.nav_cwiczenia));
     }
 
     @Override
@@ -69,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
-//    @Override  // <- coś tu sie wykrzaczyło
+//    @Override  // <- coś tu sie cos
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
 

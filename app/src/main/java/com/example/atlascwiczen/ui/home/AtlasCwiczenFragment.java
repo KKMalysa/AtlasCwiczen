@@ -1,4 +1,4 @@
-package com.example.atlascwiczen.ui.slideshow;
+package com.example.atlascwiczen.ui.home;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,24 +12,23 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.atlascwiczen.R;
-import com.example.atlascwiczen.databinding.FragmentSlideshowBinding;
+import com.example.atlascwiczen.databinding.FragmentHomeBinding;
 
-public class SlideshowFragment extends Fragment {
+public class AtlasCwiczenFragment extends Fragment {
 
-    private SlideshowViewModel slideshowViewModel;
-    private FragmentSlideshowBinding binding;
+    private AtlasCwiczenViewModel atlasCwiczenViewModel;
+    private FragmentHomeBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        slideshowViewModel =
-                new ViewModelProvider(this).get(SlideshowViewModel.class);
+        atlasCwiczenViewModel =
+                new ViewModelProvider(this).get(AtlasCwiczenViewModel.class);
 
-        binding = FragmentSlideshowBinding.inflate(inflater, container, false);
+        binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textSlideshow;
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        final TextView textView = binding.textHome;
+        atlasCwiczenViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

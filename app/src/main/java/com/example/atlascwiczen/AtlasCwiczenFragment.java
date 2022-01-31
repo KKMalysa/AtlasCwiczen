@@ -1,29 +1,21 @@
 package com.example.atlascwiczen;
 
+import android.content.Context;
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-/**
- *
- *
- */
+
 public class AtlasCwiczenFragment extends Fragment {
 
 
     public static final String OBJECTS_KEY = "objects";
 
-    public AtlasCwiczenFragment() {
-        // Required empty public constructor
-    }
 
-
-    /** design pattern */
+    /** wzorzec fabryki */
     public static AtlasCwiczenFragment newInstance(AtlasCwiczenObject[] objects) {
         AtlasCwiczenFragment fragment = new AtlasCwiczenFragment();
         Bundle args = new Bundle();
