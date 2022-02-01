@@ -1,0 +1,61 @@
+{
+  "cwiczenia":
+  [
+    {
+      "name" : "cDeska",
+      "video" : "mCzchPx3yF8"
+    },
+    {
+      "name" : "cPompki",
+      "video" : "ZFUgy3crCYY"
+    },
+    {
+      "name" : "cPilka",
+      "video" : "w-9gDALvMF4",
+      "przyrzady":
+      [
+        {
+          "name" : "pPilka",
+          "video" : "mCzchPx3yF8"
+        }
+      ]
+    },
+    {
+      "name" : "cPilkaHantle",
+      "video" : "I-88YWx71gE",
+      "przyrzady":
+      [
+        {
+           "name" : "pPilka",
+          "video" : "mCzchPx3yF8"
+        },
+        {
+           "name" : "pHantle",
+          "video" : "mCzchPx3yF8"
+        }
+      ]
+    },
+    {
+      "name" : "cTasma",
+      "video" : "Xwn8fQSW7-8",
+      "przyrzady":
+      [
+        {
+          "name" : "pTasma",
+          "video" : "HaFaf7vbgpE"
+        }
+      ]
+    }
+  ],
+  "aktywonsci pozatreningowe":
+  [
+    {
+      "name" : "aSpacer",
+      "video": "b22HKFMIfWo"
+    },
+	{
+      "name" : "aRower",
+      "video": "b22HKFMIfWo"
+    }
+  ]
+}

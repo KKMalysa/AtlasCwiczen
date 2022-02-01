@@ -20,10 +20,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.atlascwiczen.databinding.ActivityMainBinding;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
+    private AtlasCwiczenObject[] cwiczenia;
+    private AtlasCwiczenObject[] aktywnosciPozatreningowe;
+    private AtlasCwiczenObject[] cwiczeniaZPrzyrzadami;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,10 +58,43 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
+        cwiczenia = AtlasCwiczenObject.loadArrayFromJson(this, "cwiczenia");
+        aktywnosciPozatreningowe = AtlasCwiczenObject.loadArrayFromJson(this, "aktywnosciPozatreningowe");
+
+        /**
+         * Jeśli ćwiczenie wykorzystuje przyrząd, to dodaje je do listy
+         */
+        ArrayList<AtlasCwiczenObject> arrayList = new ArrayList<>();
+
+        for (AtlasCwiczenObject cwiczenie : cwiczenia) {
+            if(cwiczenie.hasPrzyrzad()) {
+                arrayList.add(cwiczenie);
+            }
+        }
+
+        /**
+         * Jeśli aktywnosc pozatreningowa wykorzystuje przyrząd, to dodaje je do listy
+         *
+         * bo w teorii potrzebny może być rower albo piłka...
+         */
+
+        for (AtlasCwiczenObject aktywnoscPozatreningowa : aktywnosciPozatreningowe) {
+            if(aktywnoscPozatreningowa.hasPrzyrzad()) {
+                arrayList.add(aktywnoscPozatreningowa);
+            }
+        }
+
+        cwiczeniaZPrzyrzadami = new AtlasCwiczenObject[arrayList.size()];
+
+        /**
+         * toArray - jak elementy sie zmieszczą to umiesci je w tablicy, jak nie, to stworzy nowa tablice o odpowiednim rozmiarze
+         */
+        cwiczeniaZPrzyrzadami = arrayList.toArray(cwiczeniaZPrzyrzadami);
+
+
         navigationView.setCheckedItem(R.id.nav_cwiczenia);
         /**
          * odkomentowanie poniższej lini wykrzacza navigation drawer. czemu? - nie wiem TODO
-         * update: ok, wiem linia 43. koliduje. nie mogę po ID, bo to jest inaczej
          */
         onNavigationItemSelected(navigationView.getMenu().findItem(R.id.nav_cwiczenia));
     }
@@ -82,25 +120,28 @@ public class MainActivity extends AppCompatActivity {
 
         if (id == R.id.nav_cwiczenia) {
 
-            AtlasCwiczenFragment fragment = AtlasCwiczenFragment.newInstance(new AtlasCwiczenObject[]{
-                    new AtlasCwiczenObject("pompki"),
-                    new AtlasCwiczenObject("brzuszki")
-            });
+            AtlasCwiczenFragment fragment = AtlasCwiczenFragment.newInstance(cwiczenia);
 
+            replaceFragment(fragment);
 
-            //wszelkie operacje na fragmentach wyknuje się przy użyciu transakcji
-            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.containerLayout, fragment); //<- add by nakladal jedne na drugi, a tego nie chce
-            fragmentTransaction.commit(); // <- zatwierdza transakcje. tak trzeba i już
 
         } else if (id == R.id.nav_przyrzady) {
 
         } else if (id == R.id.nav_aktywnosci_pozatreningowe) {
+            AtlasCwiczenFragment fragment = AtlasCwiczenFragment.newInstance(aktywnosciPozatreningowe);
 
+            replaceFragment(fragment);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void replaceFragment(AtlasCwiczenFragment fragment) {
+        //wszelkie operacje na fragmentach wyknuje się przy użyciu transakcji
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.containerLayout, fragment); //<- add by nakladal jedne na drugi, a tego nie chce
+        fragmentTransaction.commit(); // <- zatwierdza transakcje. tak trzeba i już
     }
 }

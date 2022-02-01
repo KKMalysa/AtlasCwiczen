@@ -46,7 +46,7 @@ public class AtlasCwiczenFragment extends Fragment {
         AtlasCwiczenObject[] objects = (AtlasCwiczenObject[]) getArguments().getSerializable(OBJECTS_KEY);
 
         for (AtlasCwiczenObject object : objects) {
-            textView.setText(textView.getText().toString() + object.getName());
+            textView.setText(textView.getText().toString() + " " + object.getName());
         }
 
     }
