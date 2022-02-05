@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         /**
          * odkomentowanie poniższej lini wykrzacza navigation drawer. czemu? - nie wiem TODO
          */
-        onNavigationItemSelected(navigationView.getMenu().findItem(R.id.nav_cwiczenia));
+//        onNavigationItemSelected(navigationView.getMenu().findItem(R.id.nav_przyrzady));
     }
 
     @Override
