@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+/**
+ * adapter cwiczen z przyrzadami
+ */
 public class PrzyrzadyPagerAdapter extends FragmentStateAdapter {
 
     private final AtlasCwiczenObject[] cwiczeniaZPrzyrzadami ;
