@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/karol/AndroidStudioProjects/AtlasCwiczen/app/src/main/res/drawable/cwiczenia_placeholder.xml" value="0.347" />
         <entry key="..\:/Users/karol/AndroidStudioProjects/AtlasCwiczen/app/src/main/res/layout/activity_main.xml" value="0.17255434782608695" />
         <entry key="..\:/Users/karol/AndroidStudioProjects/AtlasCwiczen/app/src/main/res/layout/content_main.xml" value="0.20516304347826086" />
         <entry key="..\:/Users/karol/AndroidStudioProjects/AtlasCwiczen/app/src/main/res/layout/fragment_atlas_cwiczen.xml" value="0.29347826086956524" />
