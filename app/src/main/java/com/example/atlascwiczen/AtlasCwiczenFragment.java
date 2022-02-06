@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +14,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public class AtlasCwiczenFragment extends Fragment {
+public class AtlasCwiczenFragment extends Fragment implements AtlasCwiczenObjectAdapter.AtlasCwiczenClickedListener {
 
 
     public static final String OBJECTS_KEY = "objects";
@@ -58,7 +59,14 @@ public class AtlasCwiczenFragment extends Fragment {
         AtlasCwiczenObject[] objects = (AtlasCwiczenObject[]) getArguments().getSerializable(OBJECTS_KEY);
 
         objectRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
-        objectRecyclerView.setAdapter(new AtlasCwiczenObjectAdapter(objects));
+        AtlasCwiczenObjectAdapter adapter = new AtlasCwiczenObjectAdapter(objects);
+        adapter.setAtlasCwiczenClickedListener(this);
+        objectRecyclerView.setAdapter(adapter);
 
+    }
+
+    @Override
+    public void atlasCwiczenObjectClicked(AtlasCwiczenObject atlasCwiczenObject) {
+        Log.d(AtlasCwiczenFragment.class.getSimpleName(), "Clicked" + atlasCwiczenObject.getName());
     }
 }

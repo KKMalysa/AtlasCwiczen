@@ -41,9 +41,12 @@ public class MainActivity extends AppCompatActivity {
         binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "akuku", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
+
+
+
         });
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
@@ -96,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
         /**
          * odkomentowanie poniższej lini wykrzacza navigation drawer. czemu? - nie wiem TODO
          */
-//        onNavigationItemSelected(navigationView.getMenu().findItem(R.id.nav_przyrzady));
+        onNavigationItemSelected(navigationView.getMenu().findItem(R.id.nav_przyrzady));
     }
 
     @Override
@@ -114,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
-//    @Override  // <- coś tu sie cos
+//    @Override  // <- NIE ROZUMIEM - raz to podkreśla na czerowono, a raz nie. nie mam pojęcia od czego to zależy
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
 
@@ -126,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         } else if (id == R.id.nav_przyrzady) {
+
 
         } else if (id == R.id.nav_aktywnosci_pozatreningowe) {
             AtlasCwiczenFragment fragment = AtlasCwiczenFragment.newInstance(aktywnosciPozatreningowe);

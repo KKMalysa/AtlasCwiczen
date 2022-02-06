@@ -4,13 +4,13 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class AtlasCwiczenViewModel extends ViewModel {
+public class CwiczeniaViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public AtlasCwiczenViewModel() {
+    public CwiczeniaViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Atlas Cwiczen fragment");
+        mText.setValue("Cwiczenia fragment");
     }
 
     public LiveData<String> getText() {

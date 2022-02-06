@@ -14,21 +14,21 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.atlascwiczen.databinding.FragmentHomeBinding;
 
-public class AtlasCwiczenFragment extends Fragment {
+public class Cwiczenia extends Fragment {
 
-    private AtlasCwiczenViewModel atlasCwiczenViewModel;
+    private CwiczeniaViewModel cwiczeniaViewModel;
     private FragmentHomeBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        atlasCwiczenViewModel =
-                new ViewModelProvider(this).get(AtlasCwiczenViewModel.class);
+        cwiczeniaViewModel =
+                new ViewModelProvider(this).get(CwiczeniaViewModel.class);
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         final TextView textView = binding.textHome;
-        atlasCwiczenViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        cwiczeniaViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
