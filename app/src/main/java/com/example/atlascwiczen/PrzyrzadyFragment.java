@@ -62,7 +62,6 @@ public class PrzyrzadyFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         AtlasCwiczenObject[] atlasCwiczenObjects = (AtlasCwiczenObject[]) getArguments().getSerializable(OBJECTS_KEY);
         PrzyrzadyPagerAdapter przyrzadyPagerAdapter = new PrzyrzadyPagerAdapter(getChildFragmentManager(), atlasCwiczenObjects );
-//        przyrzadyViewPager.setAdapter(przyrzadyPagerAdapter);
         przyrzadyViewPager.setAdapter(przyrzadyPagerAdapter);
 
     }

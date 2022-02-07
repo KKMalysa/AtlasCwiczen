@@ -9,6 +9,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.core.view.GravityCompat;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.legacy.app.ActionBarDrawerToggle;
 import androidx.navigation.NavController;
@@ -130,6 +131,8 @@ public class MainActivity extends AppCompatActivity {
 
         } else if (id == R.id.nav_przyrzady) {
 
+            replaceFragment(PrzyrzadyFragment.newInstance(cwiczeniaZPrzyrzadami));
+
 
         } else if (id == R.id.nav_aktywnosci_pozatreningowe) {
             AtlasCwiczenFragment fragment = AtlasCwiczenFragment.newInstance(aktywnosciPozatreningowe);
@@ -142,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    private void replaceFragment(AtlasCwiczenFragment fragment) {
+    private void replaceFragment(Fragment fragment) {
         //wszelkie operacje na fragmentach wyknuje się przy użyciu transakcji
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.containerLayout, fragment); //<- add by nakladal jedne na drugi, a tego nie chce

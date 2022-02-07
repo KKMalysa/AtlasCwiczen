@@ -3,46 +3,39 @@
   [
     {
       "name" : "cDeska",
-      "video" : "mCzchPx3yF8"
+      "video" : "wt9i-B5Yfkc"
     },
     {
       "name" : "cPompki",
-      "video" : "ZFUgy3crCYY"
+      "video" : "GVZ93dHZfeI"
     },
     {
       "name" : "cPilka",
-      "video" : "w-9gDALvMF4",
       "przyrzady":
       [
         {
-          "name" : "pPilka",
-          "video" : "mCzchPx3yF8"
+          "name" : "pPilka"
         }
       ]
     },
     {
       "name" : "cPilkaHantle",
-      "video" : "I-88YWx71gE",
       "przyrzady":
       [
         {
-           "name" : "pPilka",
-          "video" : "mCzchPx3yF8"
+           "name" : "pPilka"
         },
         {
-           "name" : "pHantle",
-          "video" : "mCzchPx3yF8"
+           "name" : "pHantle"
         }
       ]
     },
     {
       "name" : "cTasma",
-      "video" : "Xwn8fQSW7-8",
       "przyrzady":
       [
         {
-          "name" : "pTasma",
-          "video" : "HaFaf7vbgpE"
+          "name" : "pTasma"
         }
       ]
     }
@@ -51,11 +44,11 @@
   [
     {
       "name" : "aSpacer",
-      "video": "b22HKFMIfWo"
+      "video": "njUpupKxksg"
     },
 	{
       "name" : "aRower",
-      "video": "b22HKFMIfWo"
+      "video": "LOLh3nJeomQ"
     }
   ]
 }

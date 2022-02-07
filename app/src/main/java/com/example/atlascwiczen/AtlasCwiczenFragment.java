@@ -68,5 +68,7 @@ public class AtlasCwiczenFragment extends Fragment implements AtlasCwiczenObject
     @Override
     public void atlasCwiczenObjectClicked(AtlasCwiczenObject atlasCwiczenObject) {
         Log.d(AtlasCwiczenFragment.class.getSimpleName(), "Clicked" + atlasCwiczenObject.getName());
+
+        AtlasCwiczenActivity.start(getActivity(), atlasCwiczenObject);
     }
 }
