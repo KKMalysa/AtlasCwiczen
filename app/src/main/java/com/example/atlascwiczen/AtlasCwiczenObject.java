@@ -92,9 +92,6 @@ public class AtlasCwiczenObject implements Serializable {
             String json = loadStringFromAssets(context, "atlasCwiczen.json");
             JSONObject jsonObject = new JSONObject(json);
             JSONArray jsonArray = jsonObject.getJSONArray(type);
-
-      //      AtlasCwiczenObject[] atlasCwiczenObjects = getAtlasCwiczenObjectsFromJsonArray(jsonArray);
-
             return getAtlasCwiczenObjectsFromJsonArray(jsonArray);
 
         } catch (IOException e) {
@@ -137,5 +134,9 @@ public class AtlasCwiczenObject implements Serializable {
 
     public boolean hasPrzyrzad() {
         return przyrzady != null && przyrzady.length >0;
+    }
+
+    public String getImagePath() {
+        return String.format("file:///android_assets/%s", getImage());
     }
 }

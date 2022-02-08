@@ -15,7 +15,7 @@ import android.view.View;
 
 import com.example.atlascwiczen.databinding.ActivityAtlasCwiczenBinding;
 
-public class AtlasCwiczenActivity extends AppCompatActivity {
+public class AtlasCwiczenActivity extends AppCompatActivity implements AtlasCwiczenObjectAdapter.AtlasCwiczenClickedListener{
 
 
     public static final String OBJECT_KEY = "object";
@@ -44,5 +44,10 @@ public class AtlasCwiczenActivity extends AppCompatActivity {
         Intent intent = new Intent(activity, AtlasCwiczenActivity.class);
         intent.putExtra(OBJECT_KEY, atlasCwiczenObject);
         activity.startActivity(intent);
+    }
+
+    @Override
+    public void atlasCwiczenObjectClicked(AtlasCwiczenObject atlasCwiczenObject) {
+        AtlasCwiczenActivity.start(this, atlasCwiczenObject);
     }
 }

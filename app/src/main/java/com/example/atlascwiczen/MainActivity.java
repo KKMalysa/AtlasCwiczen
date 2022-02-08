@@ -5,6 +5,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
@@ -23,7 +24,7 @@ import com.example.atlascwiczen.databinding.ActivityMainBinding;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
@@ -42,11 +43,9 @@ public class MainActivity extends AppCompatActivity {
         binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "akuku", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Pan da 3 ;)", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-
-
 
         });
         DrawerLayout drawer = binding.drawerLayout;
@@ -98,9 +97,9 @@ public class MainActivity extends AppCompatActivity {
 
         navigationView.setCheckedItem(R.id.nav_cwiczenia);
         /**
-         * odkomentowanie poniższej lini wykrzacza navigation drawer. czemu? - nie wiem TODO
+         * odkomentowanie poniższej lini wykrzacza navigation drawer. czemu? - nie wiem
          */
-        onNavigationItemSelected(navigationView.getMenu().findItem(R.id.nav_przyrzady));
+//        onNavigationItemSelected(navigationView.getMenu().findItem(R.id.nav_cwiczenia));
     }
 
     @Override
@@ -117,8 +116,8 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
-//    @Override  // <- NIE ROZUMIEM - raz to podkreśla na czerowono, a raz nie. nie mam pojęcia od czego to zależy
+
+    @Override  // <- NIE ROZUMIEM - raz to podkreśla na czerowono, a raz nie. nie mam pojęcia od czego to zależy. niestety gdy podkreśla to aplikacja sie wykrzacza
     public boolean onNavigationItemSelected(MenuItem item) {
         int id = item.getItemId();
 
